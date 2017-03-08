@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="icon" type="image/png" href="favicon.ico">
+
+        <title>Creative Tim | Tools to build better websites</title>
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -9,65 +13,708 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Philosopher|Playfair+Display+SC" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       
 		<style>
+			body{
+				font-family: 'Open Sans', sans-serif;
+			}
 			.container{
-				margin: 0px;
 				padding: 0px;
+				position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 0;
+                z-index: 10000;
+                transition: all 0.4s ease-in-out;
+                height: auto;
+                background-color: transparent;  
+                text-align: center;
+                line-height: 40px;
 			}
 			.header{
-				font-size: 16px;
-				font-weight: bold;
-				text-align: center;
-				padding: 20px 0;
-				margin-left: 100px;
+				font-size: 18px;
+				background-color: white;
 			}
 			hr{
-				width: 100vw;
+				margin-top: 0px;
+			}
+			a{
+				color: black;
+			}
+			.row{
+				margin-left: 0;
+				margin-right: 0;
+				/*padding: 18px;*/
+				text-align: center;
 			}
 			.image{
-				width: 100vw;
-				height: 500px;
+				/*width: 100vw;*/
+				height: 800px;
 				background: url("https://ununsplash.imgix.net/photo-1427434846691-47fc561d1179?fit=crop&fm=jpg&h=700&q=75&w=1050");
 				background-attachment: fixed;
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
 			}
-			.lining{
-				
+			.tim-container p{
+				font-size: 25px;
+				color: #9E9E9E;
 			}
-			h1{
+			.website-name{
 				color: white;
-				font-size: 60px;
+				font-size: 110px;
+				text-align: center;
+				margin-top: 100px;
+				font-weight: normal;
+			}
+			.break-line{
+				border: 2px solid white;
+			}
+			.description{
+				color: #FFF;
+				font-size: 25px;
+				text-align: center;
+				padding 20px 0;
+				margin-top: 50px;
+			}
+			.tim-heading{
+				text-align: center;
+				font-weight: bold;
+			}
+			.tim-heading h2{
+				font-size: 45px;
+				font-weight: bold;
+				font-family: 'Roboto' , sans-serif;
+			}
+			.tim-container{
+				margin-top: 50px;
+				margin-left: 60px;
+				margin-right: 60px;
+			}
+			.tim-container hr{
+				color: brown;
+				border: 1px solid;
+			}
+			#canon, #samsung, #intel{
+				display: none;
+			}
+			.animation{
+				margin-bottom: 30px;
+			}
+			[class^="col-"] {
+				margin-bottom: 10px;
+				padding: 0 5px;
+			}
+			[class^="col-"] img {
+				width: 100%;
+				position: relative;
+				vertical-align: middle;
+				border: 0;
+			}
+			[class^="col-"] a{
+			text-decoration: none;
+			}
+			.section3 h3{
+				font-weight: bold;
+				font-size: 30px;
+				font-family: 'Philosopher', sans-serif;
+			}
+			.content {
+				padding: 0 15px;
 				text-align: center;
 			}
-			p{
-				color: white;
+			.over-area .content h5 {
+				margin-bottom: 0px;
+				margin-top: 20px;
+			}
+			.text-gray {
+				color: #777777;
+			}
+			h5 {
+				font-size: 1.2em;
+			}
+			.content h3 {
+				margin: 5px 0 20px;
+			}
+			p {
+				font-size: 23px;
+				font-weight: normal;
+				color: gray;
+				padding: 15px;
+			}
+			.name {
+                font-size: 23px;
+                color: #E65100;
+                margin-top: 30px;
+            }
+			#map {
+                width: 100%;
+                height: 420px;
+                margin: 0 auto;
+                position: absolute;
+                padding: 20px;
+            }
+			.pic img:hover{
+				border: 3px solid black;
+				padding: 10px;
+			}
+			.box {
+                position: relative;
+				border: 1px solid white;
+                margin: 10px 20px;
+                z-index: 1;
+                width: 350px;
+                height: 480px;
+                background: white;
+				text-align: center;
+            }
+			.btn-secondary {
+				border-radius: 18px;
+				background: white;
+				border: 1px solid #9E9E9E;
+				font-family: helvetica;
+				color: #9E9E9E;
+				font-size: 16px;
+			}
+			.btn-info {
+				border-radius: 18px;
+				background: #9E9E9E;
+				border: 1px solid #9E9E9E;
+				font-family: 'Playfair Display SC', serif;
+				font-size: 16px;
+			}
+			.address{
 				font-size: 20px;
 				text-align: center;
+				padding: 20px;
+				color: #9E9E9E;
+				font-family: 'Philosopher', sans-serif;
 			}
+			.footer-back {
+				background-color: rgba(30, 30, 30, 0.97);
+				color: #DDDDDD;
+				width: 100%;
+				line-height: 50px;
+				vertical-align: middle;
+            }
+			.footer-back a{
+				text-decoration: none;
+				float: left;
+				padding: 10px;
+				color: #DDDDDD;
+			}
+			.left{
+				padding-right: 30px;
+				padding-left: 30px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+            ul {
+                padding: 10px;
+				margin-bottom: 10px;
+				margin-top: 0px;
+            }
+            li {
+                display: inline;
+                padding: 0px 10px 0px 10px;  
+				
+            }
+             .freebies {
+                text-align: center;
+            }
+            span {
+                float: right;
+            }
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container" id="home">
 			<div class="row header">
-				<div class="col-md-2">CREATIVE TIM</div>
-				<div class="col-md-10">
-					<div class="col-md-2">About Us</div>
-					<div class="col-md-3">What Do We Do</div>
-					<div class="col-md-3">Famous Freebies</div>
-					<div class="col-md-2">Testimonials</div>
-					<div class="col-md-1">Teams</div>
-					<div class="col-md-1">Contact</div>
+				<div class="col-md-2 col-xs-2" style="font-size: 28px;"><a href="#home">CREATIVE TIM</a></div>
+				<div class="col-md-8 col-xs-8">
+				<strong>
+					<div class="col-md-1 col-xs-1"><a href="#about">About</div>
+					<div class="col-md-2 col-xs-2"><a href="#wwd">What Do We Do</div>
+					<div class="col-md-3 col-xs-3"><a href="#famous">Famous Freebies</div>
+					<div class="col-md-3 col-xs-3"><a href="#people think">Testimonials</div>
+					<div class="col-md-1 col-xs-1"><a href="#Our Team">Teams</div>
+					<div class="col-md-2 col-xs-2"><a href="#contact">Contact</div>
+				</strong>
+				</div>
+				<div class="col-md-2 col-xs-2">
+					<a href="https://www.facebook.com/JecrcUniversity/"><i class="fa fa-facebook-square" style="font-size:20"></i></a>
+                    <a href="https://twitter.com/"><i class="fa fa-twitter-square" style="font-size:20x"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/"><i class="fa fa-linkedin-square" style="font-size:20px"></i></a>
+                    <a  href="https://plus.google.com/collections/featured"><i class="fa fa-google-plus-official" style="font-size:20px"></i></a>
 				</div>
 			</div>
 			<hr>
+		</div>
+		<div class="row intro">
 			<div class="row image">
-				
-				<h1>CREATIVE TIM</h1>
-				<hr class="lining">
-				<p>Awesome bootstrap freebies and templates to build better websites</p>
+				<div class="row website-name">CREATIVE TIM</div>
+				<div class="row">
+				<div class="col-md-4 col-md-offset-4 break-line"></div>
+				</div>
+				<div class="row description">Awesome Bootstrap freebies and templates to build better websites</div >
 			</div>
 		</div>
+		<br>
+		<br>
+		<!-- About Tim section Starts -->
+		<div class="row tim-container" id="about" style="margin-top: 40px;">
+			<div class="row tim-heading">
+				<h2>ABOUT CREATIVE TIM</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+					<hr>
+				</div>
+			</div>
+			<div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+				<p>
+					Creative Tim is a startup that creates design tools that make the web development process faster and easier. 
+					We love the web and care deeply for how users interact with a digital product. We power businesses and individuals to create better looking 
+					web projects around the world.
+				</p>
+			</div>
+			<div class="T-Container">
+				<div class="row tim">
+					<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+						<div class="row tim">
+							<div class="col-md-4 col-xs-12">
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic10.jpg" />
+								</div>
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic6.jpg" />
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-12">
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic11.jpg" />
+								</div>
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic1.jpg" />
+								</div>
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic9.jpg" />
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-12">
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic2.jpg" />
+								</div>
+								<div class="animation">
+									<img src="http://presentation.creative-tim.com/assets/img/pic4.jpg" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- About Tim section ends -->
+		<!-- What do we do section starts -->
+		<div class="row tim-container" id="wwd" style="margin-top: 40px;">
+			<div class="row tim-heading">
+				<h2>WHAT DO WE DO</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4 col-xs-2 col-xs-offset-5">
+					<hr>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-md-4 col-xs-4">
+					<div class="card">
+						<div class="icon">
+							<img src="settings.png" class="col-md-4 col-md-offset-4" style="height: 100px; width: 100px;">
+						</div>
+						<br><br>
+						<div style="margin-top: 80px;">
+						<h3>Create UI Tools</h3>
+						<p>We have created the tools that will help you in your next design project. From plugins to complex kits, we've got you covered in all areas regarding front-end development. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-xs-4">
+                    <div class="card">
+                        <div class="icon">
+                            <img src="freebies.png" class="col-md-4 col-md-offset-4" style="height: 100px; width: 100px;">
+                        </div>
+						<br><br>
+						<div style="margin-top: 80px;">
+                        <h3>Share Freebies</h3>
+                        <p>Everything that we used to create our platform can be downloaded for free and guess what, people love free stuff. People have already trusted and used them in thousands of sites.</p>
+						</div>
+					</div>
+                </div>
+                <div class="col-md-4 col-xs-4">
+                    <div class="card">
+                        <div class="icon">
+                            <img src="power.png" class="col-md-4 col-md-offset-4" style="height: 100px; width: 100px;">
+                        </div>
+						<br><br>
+						<div style="margin-top: 80px;">
+                        <h3>Power Hackathons</h3>
+                        <p>We've sponsored many hackathons around the world with the tools that they need to make awesome web applications. We like to help where we can, and our tools go hand in hand with startups. </p>
+						</div>
+					</div>
+                </div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- What do we do section ends -->
+		<!-- FAMOUS FREEBIES section starts -->
+		<div class="row section3" id="famous" style="margin-top: 40px;">
+			<div class= "row tim-container">
+				<div class="row tim-heading">
+					<h2>FAMOUS FREEBIES</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4">
+						<hr>
+					</div>
+				</div class="col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2">
+				<p>Check out the most popular freebies from our platform. We would love to hear your feedback.<br></p>
+			</div>
+			<div class= "row tim-container">
+				<div class="row tim-heading">
+					<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic">
+                            <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/material-dashboard?ref=presentation-page">
+                                <img src="opt_md_thumbnail.jpg"/>
+                            </a>
+                            <div class="over-area">
+                                <div class="content">
+                                    <h5 class="text-gray">Just Launched</h5>
+                                    <h3>Material Dashboard</h3>
+                                    <p>Material Dashboard is a free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design</p>
+									<div class="row">
+										<button type="button" class="btn btn-secondary">Live View</button>
+										<button type="button" class="btn btn-info">Free Download!</button>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+			    	</div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="pic">
+                            <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/material-kit?ref=presentation-page">
+                                <img src="opt_mk_thumbnail.jpg"/>
+                            </a>
+                            <div class="over-area">
+								<div class="content">
+									<h5 class="text-gray">6.800+ Downloads</h5>
+                                    <h3>Material Kit</h3>
+                                    <p>Material Kit is a Free Bootstrap UI Kit with a fresh, new design inspired by Google's material design. You asked for it, so we built it. It's a great pleasure to introduce...</p>
+                                    <div class="row">
+										<button type="button" class="btn btn-secondary">Live View</button>
+										<button type="button" class="btn btn-info">Free Download!</button>
+									</div>
+								</div>              
+                            </div>
+                        </div>   
+                    </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="pic">
+                                <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/get-shit-done-kit?ref=presentation-page">
+                                    <img src="opt_GSDK_thumbnail.jpg"/>
+                                </a>
+                                <div class="over-area">
+                                    <div class="content">
+                                        <h5 class="text-gray">19.200+ Downloads</h5>
+                                        <h3>Get Shit Done Kit</h3>
+                                        <p>Free Bootstrap 3 UI Kit, the best starting point for any online project you are building. It magically offers responsive design and easy to use elements.</p>
+                                        <div class="row">
+											<button type="button" class="btn btn-secondary">Live View</button>
+											<button type="button" class="btn btn-info">Free Download!</button>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-50"></div>
+
+                    <div class="row">
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="pic">
+                                <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/gaia-bootstrap-template?ref=presentation-page">
+                                    <img src="opt_gbt_thumbnail.jpg">
+                                </a>
+                                <div class="over-area">
+                                    <div class="content">
+                                        <h5 class="text-gray">3.100+ Downloads</h5>
+                                        <h3>Gaia Bootstrap Template</h3>
+                                        <p>Gaia Bootstrap Template is the Free Demo of Gaia Bootstrap Template PRO which is a multi-page Bootstrap template designed to be easy to use and stylish.
+										</p>
+                                        <div class="row">
+											<button type="button" class="btn btn-secondary">Live View</button>
+											<button type="button" class="btn btn-info">Free Download!</button>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="pic">
+                                <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/light-bootstrap-dashboard?ref=presentation-page">
+                                    <img src="opt_lbd_thumbnail.jpg">
+                                </a>
+                                <div class="over-area">
+                                    <div class="content">
+                                        <h5 class="text-gray">8.500+ Downloads</h5>
+                                        <h3>Light Bootstrap Dashboard</h3>
+                                        <p>Light Bootstrap Dashboard is an admin dashboard template designed to be beautiful and simple. It is built on top of Bootstrap 3 and it is fully responsive.</p>
+                                        <div class="row">
+											<button type="button" class="btn btn-secondary">Live View</button>
+											<button type="button" class="btn btn-info">Free Download!</button>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <div class="pic">
+                                <a target="_blank" class="img-class" href="http://www.creative-tim.com/product/paper-kit?ref=presentation-page">
+                                    <img src="opt_pk_thumbnail.jpg">
+                                </a>
+                                <div class="over-area">
+                                    <div class="content">
+                                        <h5 class="text-gray">6.200+ Downloads</h5>
+                                        <h3>Paper Kit</h3>
+                                        <p>Paper Kit is a free Bootstrap UI kit that can get you going in a new creative direction! To say the least, it's different since it's not material, flat or iOS inspired.</p>
+                                        <div class="row">
+											<button type="button" class="btn btn-secondary">Live View</button>
+											<button type="button" class="btn btn-info">Free Download!</button>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<br><br>
+		<!--FAMOUS FREEBIES section ends -->
+		<!-- What People think section starts -->
+		<div class="row section4" id="people think" style="margin-top: 40px;">
+			<div class= "row tim-container">
+				<div class="row tim-heading">
+					<h2>WHAT PEOPLE THINK...</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-xs-2 col-xs-offset-5">
+						<hr>
+					</div>
+				</div>
+				<div class="row quotes">
+                        <div class="tab active" id="sony">
+                            <p class="large">
+                                Hey Creative-Tim team. Absolutely love your work! It's a God-send for a developer like me who doesn't know his ass from great design! Keep up the awesome work! Ed
+                            </p>
+                        </div>
+
+                        <div class="tab" id="canon">
+                            <p class="large">Hello there, My Name is Abhi Khatri. You're simply awesome. I would love to contact you. I'm a new front-end developer but everytime I checkout your stuff it gives me idea to make my own stuff. Keep it up :)</p>
+                        </div>
+
+                        <div class="tab" id="samsung">
+                            <p class="large">
+                                Finding a website with a vast purpose is always inspiring to continue front web development. But you did Magic my friends. Keep going and be sure if there is a donation, I'm in. Thanks for your daily hardworking. hope to meet u guys one day.
+                            </p>
+                        </div>
+
+                        <div class="tab" id="intel">
+                            <p class="large">Hi, your site and all the stuff on it looks simply awesome, thank's for sharing. Love this. Greetings from Germany!</p>
+                        </div>
+				</div>
+				<div class="row name">
+					<div class="col-md-offset-2 col-md-2 col-xs-2 col-xs-offset-2" id="EDWIN">EDWIN REDE</div>
+					<div class="col-md-2 col-xs-2" id="ABHI">ABHI KHATRI</div>
+					<div class="col-md-2 col-xs-2" id="FEARS">FEARS KID</div>
+					<div class="col-md-2 col-xs-2" id="K">KOLODZIEJ NIKOLAI</div>
+				</div>      			
+			</div>
+		</div>
+		<br><br>
+		<!-- What people thinks ends -->
+		<!-- Meet our team section starts -->
+		<div class="row section-5" id="Our Team" style="margin-top: 40px;">
+            <div class= "row tim-container">
+				<div class="row tim-heading">
+					<h2>MEET OUR TEAM</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4 col-xs-2 col-xs-offset-5">
+						<hr>
+					</div>
+				</div>
+			</div>
+            <div class="row tim-container">
+                <div class="col-md-3 col-xs-3">
+                    <div class="row">
+                        <img src="elena.jpg" class="img-circle" style="width: 120px; border: 5px solid #EF9A9A;">
+                    </div>
+                    <div class="row Top head">
+                        <h2>ELENA CONACEL</h2>
+                    </div>
+                    <div class="row">
+                        <p>Elena is one of the co-founders and takes care of growth, product development and partnerships. She is analytical, driven and adapts easily to new conditions, while trying to keep everyone on track.</p>
+                    </div>
+                    <hr class="side"  style="color: gray;">
+                    <div class="text-center">
+                        <a href="https://www.linkedin.com/in/elena-cristina-conacel-a89a436b"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+                        <a href="https://twitter.com/conacelelena"><i class="fa fa-twitter-square" style="font-size:24px"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                    <div class="row">
+                        <img src="diana.png" class="img-circle" style="width: 120px; border: 5px solid #EF9A9A;">
+                    </div>
+                    <div class="row Top head">
+                        <h2>DIANA CALIMAN</h2>
+                    </div>
+                    <div class="row">
+                        <p>Diana is the person behind our social media channels, she takes care of our users' community and communication. She is ambitious, hard-working, instantly likeable and fun to be around.</p>
+                    </div>
+                    <hr class="side"  style="color: gray;">
+                    <div class="text-center">
+                        <a href="https://www.facebook.com/DianaaCaliman?fref=ts"><i class="fa fa-facebook-square" style="font-size:24px"></i></a>
+                        <a href="https://www.linkedin.com/in/diana-caliman-751552b5"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+                        <a href="https://twitter.com/eDianaCaliman"><i class="fa fa-twitter-square" style="font-size:24px"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-3">
+                    <div class="row">
+                        <img src="alex.png" class="img-circle" style="width: 120px; border: 5px solid #EF9A9A;">
+                    </div>
+                    <div class="row Top head">
+                        <h2>ALEX PADURARU</h2>
+                    </div>
+                    <div class="row">
+                        <p>Alex is one of the co-founders and drives the technical strategy of the platform, customer support and brand. He is level-headed, smart and with a taste for simple, aesthetic design. </p>
+                    </div>
+                    <hr class="side" style="color: gray;">
+                    <div class="text-center">
+                        <a href="https://www.facebook.com/axelut?fref=ts"><i class="fa fa-facebook-square" style="font-size:24px"></i></a>
+                        <a href="https://www.linkedin.com/in/alexpaduraru"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+                        <a href="https://twitter.com/Axelut"><i class="fa fa-twitter-square" style="font-size:24px"></i></a>
+                    </div>
+                </div>
+				<div class="col-md-3 col-xs-3">
+                    <div class="row">
+                        <img src="beni.jpg" class="img-circle" style="width: 120px; border: 5px solid #EF9A9A;">
+                    </div>
+                    <div class="row Top head">
+                        <h2>BENIAMIN MARCU</h2>
+                    </div>
+                    <div class="row">
+                        <p>Beni is the guy responsible for keeping the platform in check, improving its functionality and adding new features. He is driven, always open for learning more, friendly and a fan of Ruby on Rails.</p>
+                    </div>
+                    <hr class="side"  style="color: gray;">
+                    <div class="text-center">
+                        <a href="https://www.facebook.com/beniamin.marcu.1?fref=ts"><i class="fa fa-facebook-square" style="font-size:24px"></i></a>
+                        <a href="https://www.linkedin.com/in/beniamin-marcu-52856947"><i class="fa fa-linkedin-square" style="font-size:24px"></i></a>
+                        <a href="https://twitter.com/marcu_beniamin"><i class="fa fa-twitter-square" style="font-size:24px"></i>
+                        </a>
+                    </div>
+                </div>
+             </div>
+        </div>
+		<br>
+		<br>
+		<!-- Meet our team ends -->
+		<!-- Where to meet section starts -->
+		<div id="contact" style="margin-top: 40px;">
+            <div id="map"></div>
+            <div class="box">
+                <h2>Where to meet</h2>
+				<div class="address">N-81, Barakhamba Road, Block N, Cannaught Place, Block N, Connaught Place, New Delhi, Delhi 110001</div>
+					<h4 style="font-weight: bold;">Want to say hello!</h4>
+					<br>
+					<button type="button" class="btn btn-primary ">Contact Us</button>
+					<br><br>
+					<div class="comment">Thank you for 948 shares!</div>
+					<br>
+					<div class="share">
+						<button type="button" class="btn"><i class="fa fa-facebook" aria-hidden="true" style="height: 25px;"></i>Facebook</button>
+						<button type="button" class="btn"><i class="fa fa-twitter" aria-hidden="true" style="height: 25px;"></i>Twitter</button>
+					</div>
+				</div>	
+            </div>    
+        </div>
+		<!-- Where to meet section ends -->
+		<!-- Footer Starts -->   
+		<footer class="footer-back">
+			<div class="left">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#contact">Contact</a></li>
+					<li><a href="https://blog.google/">blog</a></li>
+					<li><a href="https://www.sponsormyevent.com/">Sponsorship</a></li>
+					<span>
+					<li><a href="https://www.facebook.com/JecrcUniversity/"><i class="fa fa-facebook-square" style="font-size:25px"></i></a></li>
+					<li> <a href="https://twitter.com/"><i class="fa fa-twitter-square" style="font-size:25px"></i>
+						</a>
+					</li>
+					<li><a href="https://in.linkedin.com/"><i class="fa fa-linkedin-square" style="font-size:25px"></i></a></li>
+					<li><a  href="https://plus.google.com/collections/featured"><i class="fa fa-google-plus-official" style="font-size:25px"></i></a></li>
+					</span>
+				</ul> 
+			</div>
+		</footer>
+		<!-- Footer ends -->
+		<script>
+            $('#ABHI').click(function(){
+                $('.tab').hide();
+				$('#canon').show();
+			});
+            $('#FEARS').click(function(){
+                $('.tab').hide();
+				$('#samsung').show();
+			});
+            $('#K').click(function(){
+                $('.tab').hide();
+				$('#intel').show();
+			});
+			$('#EDWIN').click(function(){
+                $('.tab').hide();
+				$('#sony').show();
+			});
+		</script>
+		<script>
+            function initMap() {
+				var uluru = {lat: 20.5937, lng: 78.9629};
+				var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 11,
+				center: {lat: 28.7041, lng: 77.1025}
+				});
+				var marker = new google.maps.Marker({
+				position: {lat: 28.631374, lng: 77.222031},
+				map: map
+				});
+			}
+        </script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFrGUue91eQ22u4s9P_mKKqWGOXTQNLk4&callback=initMap"
+                    type="text/javascript">
+        </script>
 	</body>
 </html>
